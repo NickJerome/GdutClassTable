@@ -1,0 +1,18 @@
+[全校课表]
+https://jxfw.gdut.edu.cn/xsgrkbcx!getQxkbList.action?xnxqdm=202001&zc=7&firstquery=true
+[个人课表]
+https://jxfw.gdut.edu.cn/xsgrkbcx!getXsgrbkList.action
+Cookies:JSESSIONID[]
+[个人课表][JSON]
+https://jxfw.gdut.edu.cn/xsgrkbcx!getKbRq.action?xnxqdm=202001&zc=周次
+Cookies:JSESSIONID[]
+[登录验证]
+验证码：https://jxfw.gdut.edu.cn/yzm
+POST提交：https://jxfw.gdut.edu.cn/new/login
+JSON ： {account : account,pwd : password,verifycode : verifycode}
+PassWord是加密后的密码
+Key = CryptoJS.enc.Utf8.parse(verifycode+verifycode+verifycode+verifycode);
+srcs = CryptoJS.enc.Utf8.parse(password);
+encrypted = CryptoJS.AES.encrypt(srcs, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+password = encrypted.ciphertext.toString();
+ 
